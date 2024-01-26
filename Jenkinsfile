@@ -7,7 +7,7 @@ pipeline {
                  // Debugging output to list files in the workspace
                  sh 'ls -lR'
                 // Stash files in the Jenkins workspace
-                stash(name: 'myfiles', includes: 'week16-project/ansible-codes/*.yml')
+                stash(name: 'myfiles', includes: '**/*', excludes: 'Jenkinsfile')
             }
         }
         stage('Transfer Files to Ansible Agent') {
