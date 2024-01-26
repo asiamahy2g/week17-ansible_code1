@@ -5,7 +5,7 @@ pipeline {
         stage('Stash Files') {
             steps {
                 // Stash files in the Jenkins workspace
-                stash(name: 'myfiles', includes: 'week17-ansible_code1/*.yml')
+                stash(name: 'myfiles', includes: 'week17-ansible_code1/playbook*.yml')
             }
         }
         stage('Transfer Files to Ansible Agent') {
