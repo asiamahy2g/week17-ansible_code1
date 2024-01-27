@@ -38,7 +38,8 @@ pipeline {
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
                         sh 'ansible-vault decrypt /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml --vault-password-file /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/abc123.txt'
-                        sh 'ansible-playbook -i home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/first-playbook.yml'
+                        sh 'ansible-playbook -i /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml'
+                        sh 'ansible-playbook /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/first-playbook.yml'
                     }
                 }
             }
