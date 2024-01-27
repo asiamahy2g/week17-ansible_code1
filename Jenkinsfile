@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Unzip ansible-codes.zip
-                    sh 'unzip ansible-codes.zip'
+                    sh 'unzip -o ansible-codes.zip'
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
                         sh 'ansible-playbook first-playbook.yml'
