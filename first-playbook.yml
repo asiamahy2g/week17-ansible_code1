@@ -5,8 +5,8 @@
   tasks:
   - name: Create a user
     user:
-     name: mysuser
-     comment: Carlos Monte
+     name: Manny
+     comment: Manny Alix
   - name: Create a file on target host
     file:
      path: /tmp/ansiblefile
