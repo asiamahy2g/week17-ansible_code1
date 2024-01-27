@@ -52,7 +52,7 @@ pipeline {
                 script {
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
-                        sh 'ansible-playbook first-playbook.yml'
+                        sh 'ansible-playbook inventory.yml'
                     }
                 }
             }
