@@ -25,7 +25,7 @@ pipeline {
                     // CD into ansible-codes folder
                     dir('ansible-codes') {
                         // Decrypt the inventory.yml file
-                        sh 'ansible-vault decrypt inventory.yml --vault-password-file ../abc123.txt'
+                        sh 'ansible-vault decrypt /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml --vault-password-file ../abc123.txt'
                     }
                 }
             }
@@ -46,3 +46,4 @@ pipeline {
         }
     }
 }
+
