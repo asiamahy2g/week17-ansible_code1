@@ -4,8 +4,8 @@
   gather_facts: yes
   ignore_errors: yes
   vars:
-    user_name: serge2029
-    group_name: devops
+    user_name: manny2029
+    group_name: success
   vars_files:
      - variables.yml
   tasks:
