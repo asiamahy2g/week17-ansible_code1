@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean Workspace') {
-            steps {
-                deleteDir()
-            }
-        }
-
         stage('Zip and Push to JFrog Artifactory') {
             steps {
                 script {
