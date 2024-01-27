@@ -37,7 +37,7 @@ pipeline {
                     sh 'unzip -o ansible-codes.zip'
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
-                        sh 'ansible-vault decrypt inventory.yml --vault-password-file /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/abc123.txt'
+                        sh 'ansible-vault decrypt /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml --vault-password-file /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/abc123.txt'
                         sh 'ansible-inventory -i home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml --list'
                         sh 'ansible-playbook /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/first-playbook.yml'
                     }
