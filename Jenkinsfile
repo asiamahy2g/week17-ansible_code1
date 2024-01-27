@@ -27,14 +27,19 @@ pipeline {
             }
         }
         
-        stage('Decrypt Inventory File') {
+        stage('Unzip and Decrypt Files') {
             agent {
                 label 'ansible'
             }
             steps {
                 script {
-                    // Decrypt the encrypted inventory file
-                    sh 'ansible-vault decrypt ansible-codes/inventory.yml --vault-password-file abc123.txt'
+                    // Unzip ansible-codes.zip
+                    sh 'unzip -o ansible-codes.zip'
+                    // CD into ansible-codes folder
+                    dir('ansible-codes') {
+                        // Decrypt the inventory.yml file
+                        sh 'ansible-vault decrypt inventory.yml --vault-password-file ../abc123.txt'
+                    }
                 }
             }
         }
@@ -45,8 +50,6 @@ pipeline {
             }
             steps {
                 script {
-                    // Unzip ansible-codes.zip
-                    sh 'unzip -o ansible-codes.zip'
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
                         sh 'ansible-playbook first-playbook.yml'
@@ -56,5 +59,4 @@ pipeline {
         }
     }
 }
-
 
