@@ -1,12 +1,12 @@
 ---
-- hosts: webservers
+- hosts: all
   ignore_errors: True
   become: True
   tasks:
   - name: Create a user
     user:
-     name: Manny
-     comment: Manny Alix
+     name: SuperManny 
+     comment: Super Manny
   - name: Create a file on target host
     file:
      path: /tmp/ansiblefile
