@@ -27,6 +27,18 @@ pipeline {
             }
         }
         
+        stage('Decrypt Inventory File') {
+            agent {
+                label 'ansible'
+            }
+            steps {
+                script {
+                    // Decrypt the encrypted inventory file
+                    sh 'ansible-vault decrypt ansible-codes/inventory.yml --vault-password-file abc123.txt'
+                }
+            }
+        }
+        
         stage('Run playbook') {
             agent {
                 label 'ansible'
@@ -37,10 +49,12 @@ pipeline {
                     sh 'unzip -o ansible-codes.zip'
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
-                        sh 'ansible-playbook /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/first-playbook.yml'
+                        sh 'ansible-playbook first-playbook.yml'
                     }
                 }
             }
         }
     }
 }
+
+
