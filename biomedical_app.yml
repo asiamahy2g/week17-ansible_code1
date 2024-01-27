@@ -1,0 +1,33 @@
+---
+- hosts: db
+  become: yes
+  ignore_errors: yes
+  tasks:
+    - name: Delete old artifact
+      file:
+        path: "/home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target/bio*.jar"
+        state: absent
+
+    - name: Check if an app is running on port 8082
+      shell: "lsof -ti :8082"
+      register: app_pid
+      ignore_errors: yes
+
+    - name: Kill the app if running
+      shell: "kill {{ app_pid.stdout }}"
+      when: app_pid.stdout is defined
+    
+    - name: Create directory for artifact if it doesn't exist
+      file:
+        path: "/home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target"
+        state: directory
+
+    - name: Download the new artifact from JFrog
+      shell: "curl -uadmin:AP4y6DmdHPZsNpu4PoxakusUxFz -o /home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target/bioMedical-0.0.6-SNAPSHOT.jar http://52.90.252.228:8081/artifactory/devops/bioMedical-0.0.6-SNAPSHOT.jar"
+
+
+    - name: Download the new artifact from JFrog
+      shell: "curl -uadmin:AP4y6DmdHPZsNpu4PoxakusUxFz -o /home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target/bioMedical-0.0.6-SNAPSHOT.jar http://52.90.252.228:8081/artifactory/devops/bioMedical-0.0.6-SNAPSHOT.jar"
+      ignore_errors: yes
+    - name: Bring up the app in the background
+      shell: "nohup java -jar /home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target/bioMedical-0.0.6-SNAPSHOT.jar > /home/ec2-user/ansible-dev/workspace/week16-project/geo-ansible_server/target/bioMedical.log 2>&1 &"
