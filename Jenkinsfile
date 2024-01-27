@@ -20,12 +20,18 @@ pipeline {
             }
             steps {
                 script {
+                    // Check if ansible-codes.zip exists
+                    def zipFile = 'ansible-codes.zip'
+                    if (!fileExists(zipFile)) {
+                        error "ansible-codes.zip not found!"
+                    }
+                    
                     // Unzip ansible-codes.zip
                     sh 'unzip -o ansible-codes.zip'
                     // CD into ansible-codes folder
                     dir('ansible-codes') {
                         // Decrypt the inventory.yml file
-                        sh 'ansible-vault decrypt /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/inventory.yml --vault-password-file ../abc123.txt'
+                        sh 'ansible-vault decrypt inventory.yml --vault-password-file ../abc123.txt'
                     }
                 }
             }
@@ -39,11 +45,16 @@ pipeline {
                 script {
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
-                        sh 'ansible-playbook /home/ec2-user/ansible-dev/workspace/week16-project/ansible-codes/first-playbook.yml'
+                        sh 'ansible-playbook first-playbook.yml'
                     }
                 }
             }
         }
     }
+}
+
+def fileExists(String filename) {
+    def file = new File(filename)
+    return file.exists()
 }
 
