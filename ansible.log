@@ -4586,3 +4586,219 @@ The offending line appears to be:
 2024-01-27 18:38:35,383 p=19176 u=ec2-user n=ansible | skipping: [172.31.41.148]
 2024-01-27 18:38:35,403 p=19176 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************
 2024-01-27 18:38:35,403 p=19176 u=ec2-user n=ansible | 172.31.41.148              : ok=9    changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-01-28 21:18:20,699 p=5091 u=ec2-user n=ansible | 172.31.90.126 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added '172.31.90.126' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,password,keyboard-interactive).",
+    "unreachable": true
+}
+2024-01-28 21:18:21,602 p=5091 u=ec2-user n=ansible | 172.31.29.208 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-01-28 21:18:24,096 p=5091 u=ec2-user n=ansible | 172.31.41.148 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-01-28 21:23:50,009 p=7405 u=ec2-user n=ansible | 52.55.159.127 | FAILED! => {
+    "msg": "to use the 'ssh' connection type with passwords or pkcs11_provider, you must install the sshpass program"
+}
+2024-01-28 21:23:50,431 p=7405 u=ec2-user n=ansible | 172.31.41.148 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-01-28 21:23:50,766 p=7405 u=ec2-user n=ansible | 172.31.29.208 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-01-28 21:31:38,918 p=11241 u=ec2-user n=ansible | 52.55.159.127 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "module_stderr": "Exception calling \"Create\" with \"1\" argument(s): \"At line:4 char:21\r\n+ def _ansiballz_main():\r\n+                     ~\r\nAn expression was expected after '('.\r\nAt line:8 char:19\r\n+         os.getcwd()\r\n+                   ~\r\nAn expression was expected after '('.\r\nAt line:20 char:27\r\n+     except (AttributeError, OSError):\r\n+                           ~\r\nMissing argument in parameter list.\r\nAt line:22 char:29\r\n+     excludes = set(('', '.', scriptdir))\r\n+                             ~\r\nMissing expression after ','.\r\nAt line:22 char:30\r\n+     excludes = set(('', '.', scriptdir))\r\n+                              ~~~~~~~~~\r\nUnexpected token 'scriptdir' in expression or statement.\r\nAt line:22 char:29\r\n+     excludes = set(('', '.', scriptdir))\r\n+                             ~\r\nMissing closing ')' in expression.\r\nAt line:22 char:39\r\n+     excludes = set(('', '.', scriptdir))\r\n+                                       ~\r\nUnexpected token ')' in expression or statement.\r\nAt line:22 char:40\r\n+     excludes = set(('', '.', scriptdir))\r\n+                                        ~\r\nUnexpected token ')' in expression or statement.\r\nAt line:29 char:7\r\n+     if sys.version_info < (3,):\r\n+       ~\r\nMissing '(' after 'if' in if statement.\r\nAt line:29 char:30\r\n+     if sys.version_info < (3,):\r\n+                              ~\r\nMissing expression after ','.\r\nNot all parse errors were reported.  Correct the reported errors and try again.\"\r\nAt line:10 char:1\r\n+ $exec_wrapper = [ScriptBlock]::Create($split_parts[0])\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException\r\n    + FullyQualifiedErrorId : ParseException\r\n \r\nThe expression after '&' in a pipeline element produced an object that was not valid. It must result in a command \r\nname, a script block, or a CommandInfo object.\r\nAt line:11 char:2\r\n+ &$exec_wrapper\r\n+  ~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException\r\n    + FullyQualifiedErrorId : BadExpression\r\n ",
+    "module_stdout": "",
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error",
+    "rc": 1
+}
+2024-01-28 21:41:10,294 p=14761 u=ec2-user n=ansible | 52.55.159.127 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_architecture": "64-bit",
+        "ansible_architecture2": "x86_64",
+        "ansible_bios_date": "08/24/2006",
+        "ansible_bios_version": "4.11.amazon",
+        "ansible_date_time": {
+            "date": "2024-01-28",
+            "day": "28",
+            "epoch": "1706478068.16245",
+            "epoch_int": 1706478068,
+            "epoch_local": "1706478068.16245",
+            "hour": "21",
+            "iso8601": "2024-01-28T21:41:08Z",
+            "iso8601_basic": "20240128T214108162449",
+            "iso8601_basic_short": "20240128T214108",
+            "iso8601_micro": "2024-01-28T21:41:08.162449Z",
+            "minute": "41",
+            "month": "01",
+            "second": "08",
+            "time": "21:41:08",
+            "tz": "UTC",
+            "tz_offset": "+00:00",
+            "weekday": "Sunday",
+            "weekday_number": "0",
+            "weeknumber": "4",
+            "year": "2024"
+        },
+        "ansible_distribution": "Microsoft Windows Server 2022 Datacenter",
+        "ansible_distribution_major_version": "10",
+        "ansible_distribution_version": "10.0.20348.0",
+        "ansible_domain": "",
+        "ansible_env": {
+            "ALLUSERSPROFILE": "C:\\ProgramData",
+            "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+            "AWS_EXECUTION_ENV": "EC2",
+            "COMPUTERNAME": "EC2AMAZ-KP4CT7G",
+            "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+            "CommonProgramFiles": "C:\\Program Files\\Common Files",
+            "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+            "CommonProgramW6432": "C:\\Program Files\\Common Files",
+            "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+            "EC2LAUNCH_TELEMETRY": "1",
+            "HOME": "C:\\Users\\Administrator",
+            "HOMEDRIVE": "C:",
+            "HOMEPATH": "\\Users\\Administrator",
+            "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+            "LOGNAME": "administrator",
+            "NUMBER_OF_PROCESSORS": "2",
+            "OS": "Windows_NT",
+            "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+            "PROCESSOR_ARCHITECTURE": "AMD64",
+            "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+            "PROCESSOR_LEVEL": "6",
+            "PROCESSOR_REVISION": "4f01",
+            "PROMPT": "administrator@EC2AMAZ-KP4CT7G $P$G",
+            "PSExecutionPolicyPreference": "Unrestricted",
+            "PSModulePath": "C:\\Users\\Administrator\\Documents\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules",
+            "PUBLIC": "C:\\Users\\Public",
+            "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;",
+            "ProgramData": "C:\\ProgramData",
+            "ProgramFiles": "C:\\Program Files",
+            "ProgramFiles(x86)": "C:\\Program Files (x86)",
+            "ProgramW6432": "C:\\Program Files",
+            "SHELL": "c:\\windows\\system32\\cmd.exe",
+            "SSH_CLIENT": "52.201.153.224 56040 22",
+            "SSH_CONNECTION": "52.201.153.224 56040 172.31.90.126 22",
+            "SystemDrive": "C:",
+            "SystemRoot": "C:\\Windows",
+            "TEMP": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+            "TMP": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+            "USER": "administrator",
+            "USERDOMAIN": "WORKGROUP",
+            "USERNAME": "administrator",
+            "USERPROFILE": "C:\\Users\\Administrator",
+            "c28fc6f98a2c44abbbd89d6a3037d0d9_POSIX_FD_STATE": "AAAAAAICAgA=",
+            "windir": "C:\\Windows"
+        },
+        "ansible_fqdn": "EC2AMAZ-KP4CT7G",
+        "ansible_hostname": "EC2AMAZ-KP4CT7G",
+        "ansible_interfaces": [
+            {
+                "connection_name": "Ethernet 2",
+                "default_gateway": "172.31.80.1",
+                "dns_domain": "ec2.internal",
+                "interface_index": 7,
+                "interface_name": "AWS PV Network Device #0",
+                "ipv4": {
+                    "address": "172.31.90.126",
+                    "prefix": "20"
+                },
+                "ipv6": {
+                    "address": "fe80::f0ef:2459:6fea:7363%7",
+                    "prefix": "64"
+                },
+                "macaddress": "12:77:42:EF:FF:73",
+                "mtu": 9001,
+                "speed": 1000
+            }
+        ],
+        "ansible_ip_addresses": [
+            "fe80::f0ef:2459:6fea:7363%7",
+            "172.31.90.126"
+        ],
+        "ansible_kernel": "10.0.20348.0",
+        "ansible_lastboot": "2024-01-28 20:18:53Z",
+        "ansible_machine_id": "S-1-5-21-3190633944-1098694775-2002762120",
+        "ansible_memfree_mb": 1314,
+        "ansible_memtotal_mb": 4096,
+        "ansible_netbios_name": "EC2AMAZ-KP4CT7G",
+        "ansible_nodename": "EC2AMAZ-KP4CT7G",
+        "ansible_os_family": "Windows",
+        "ansible_os_installation_type": "Server",
+        "ansible_os_name": "Microsoft Windows Server 2022 Datacenter",
+        "ansible_os_product_type": "server",
+        "ansible_owner_contact": "",
+        "ansible_owner_name": "EC2",
+        "ansible_pagefilefree_mb": 1238,
+        "ansible_pagefiletotal_mb": 1408,
+        "ansible_powershell_version": 5,
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+            "1",
+            "GenuineIntel",
+            "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz"
+        ],
+        "ansible_processor_cores": 67,
+        "ansible_processor_count": 2,
+        "ansible_processor_threads_per_core": 85,
+        "ansible_processor_vcpus": 2,
+        "ansible_product_name": "HVM domU",
+        "ansible_product_serial": "ec2f8304-7566-ba60-7672-bb02082b5fc3",
+        "ansible_reboot_pending": true,
+        "ansible_swaptotal_mb": 0,
+        "ansible_system": "Win32NT",
+        "ansible_system_description": "",
+        "ansible_system_vendor": "Xen",
+        "ansible_uptime_seconds": 4936,
+        "ansible_user_dir": "C:\\Users\\Administrator",
+        "ansible_user_gecos": "",
+        "ansible_user_id": "administrator",
+        "ansible_user_sid": "S-1-5-21-3190633944-1098694775-2002762120-500",
+        "ansible_virtualization_role": "guest",
+        "ansible_virtualization_type": "xen",
+        "ansible_windows_domain": "WORKGROUP",
+        "ansible_windows_domain_member": false,
+        "ansible_windows_domain_role": "Stand-alone server",
+        "gather_subset": [
+            "all"
+        ],
+        "module_setup": true
+    },
+    "changed": false
+}
+2024-01-28 21:43:12,018 p=15701 u=ec2-user n=ansible | 52.55.159.127 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2024-01-28 21:53:27,282 p=19619 u=ec2-user n=ansible | playbook: windows.yml
+2024-01-28 21:53:32,295 p=19685 u=ec2-user n=ansible | PLAY [wind] **********************************************************************************************
+2024-01-28 21:53:32,305 p=19685 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************
+2024-01-28 21:53:36,021 p=19685 u=ec2-user n=ansible | ok: [52.55.159.127]
+2024-01-28 21:53:36,029 p=19685 u=ec2-user n=ansible | TASK [Create a directory] ********************************************************************************
+2024-01-28 21:53:37,644 p=19685 u=ec2-user n=ansible | changed: [52.55.159.127]
+2024-01-28 21:53:37,649 p=19685 u=ec2-user n=ansible | TASK [Download file] *************************************************************************************
+2024-01-28 21:53:43,486 p=19685 u=ec2-user n=ansible | changed: [52.55.159.127]
+2024-01-28 21:53:43,499 p=19685 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************
+2024-01-28 21:53:43,499 p=19685 u=ec2-user n=ansible | 52.55.159.127              : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

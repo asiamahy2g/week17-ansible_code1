@@ -1,0 +1,12 @@
+---
+- hosts: wind
+  tasks:
+    - name: Create a directory
+      win_file:
+        path: C:\ansible-folder
+        state: directory
+
+    - name: Download file
+      win_get_url:
+        dest: C:\ansible-folder\linux-6.7.2.tar.xz
+        url: https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.7.2.tar.xz
